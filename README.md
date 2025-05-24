@@ -10,7 +10,7 @@ I’ve included some helpful links to guide you through the lab and for studying
 ---
 [LPIC-1 Exam 101.1 Lab](https://1drv.ms/w/c/354f1c8d534fbced/EZOo5qb56thNhBnLrsEatygBT3OPsqAiqxEYwSc89oVSxQ?e=kbBURl)
 ---
-###🔸 Part 1: Enable/Disable Integrated Peripherals
+### 🔸 Part 1: Enable/Disable Integrated Peripherals
 
 I rebooted and entered the BIOS/UEFI (pressed "Esc" key for mine). Inside the Integrated Peripherals section, I found toggles for USB controllers, network cards, and onboard audio.
 
@@ -27,7 +27,7 @@ Also here is what the GRUB (Bootloader) looks like:
 ![Ge52hxt](https://github.com/user-attachments/assets/07368661-0dc0-478c-bc9b-6d0e6c9e792d)
 
 ---
-###🔸 Part 2: Identify Mass Storage Devices
+### 🔸 Part 2: Identify Mass Storage Devices
 
 I ran the lsblk and fdisk -l commands to check out my drives. Then I plugged in a USB stick and saw it show up as /dev/sdb.
 
@@ -38,7 +38,7 @@ What I learned: Good practice to spot the difference between SSDs, HDDs, loop de
 ![CaCuLxS](https://github.com/user-attachments/assets/eedc7449-948e-426e-9d62-f28b3f9067de)
 
 ---
-###🔸 Part 3: Check Hardware Resources
+### 🔸 Part 3: Check Hardware Resources
 
 I checked system resource usage with:
 
@@ -54,7 +54,7 @@ cat /proc/dma
 What I learned: These files show how devices are connected and using resources. This can help figure out conflicts or issues with certain hardware.
 
 ---
-###🔸 Part 4: List Hardware Info
+### 🔸 Part 4: List Hardware Info
 
 I ran the following:
 
@@ -79,9 +79,9 @@ dmidecode for BIOS and system details
 What I learned: These are quick and powerful tools for checking what hardware you have and how it’s performing—all from the terminal.
 
 ---
-###🔸 Part 5: Manage USB Devices
+### 🔸 Part 5: Manage USB Devices
 
-### 🛠️ Troubleshooting Incident – USB Mount Commands on CentOS
+###  🛠️ Troubleshooting Incident – USB Mount Commands on CentOS
 While working on Part 5: Mount and Unmount USB Devices, I noticed that commands like udisksctl didn’t work on my CentOS VM. Turns out, CentOS doesn’t include desktop-focused tools like udisks2 by default, since it's a server-oriented OS.
 
 To fix this, I’d need to install udisks2 manually or stick to basic commands like mount and umount with the correct device paths. This was a helpful reminder that tools vary across distros, so knowing your environment is just as important as knowing the commands.
@@ -100,7 +100,7 @@ What I learned: Mounting and unmounting correctly is key to keeping USB data saf
 
 
 ---
-###🔸 Part 6: Explore sysfs, udev, and dbus
+### 🔸 Part 6: Explore sysfs, udev, and dbus
 
 I checked network interface details in /sys/class/net
 
@@ -111,6 +111,3 @@ Used dbus-monitor to watch system messages
 ![mG0oYSB](https://github.com/user-attachments/assets/d42e1d85-0bef-4339-84fa-47fa07a3bc81)
 
 What I learned: These tools show how Linux tracks devices behind the scenes. You can actually see the kernel reacting when you plug or unplug something.
-
-📸 Screenshot of udevadm monitor while plugging in a USB.
-
