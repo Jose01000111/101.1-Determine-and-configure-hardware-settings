@@ -1,6 +1,6 @@
 # 🧪 LPIC-1 Lab:
 [Topic 101.1 Determine and Configure Hardware Settings](https://www.lpi.org/our-certifications/exam-101-102-objectives/#101.1_Determine_and_configure_hardware_settings)
-
+---
 [Topic 101.1 Notes](https://1drv.ms/w/c/354f1c8d534fbced/Ef7G_xVPG0ZJu6wZ0DdeGSUBmSy6RBxTid3fkbKFnt8J-w?e=Mm5yvf)
 ---
 
