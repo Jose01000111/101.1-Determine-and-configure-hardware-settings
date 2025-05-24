@@ -12,9 +12,11 @@ I’ve included some helpful links to guide you through the lab and for studying
 ---
 ###🔸 Part 1: Enable/Disable Integrated Peripherals
 
-I rebooted and entered the BIOS/UEFI (pressed "Del" for mine). Inside the Integrated Peripherals section, I found toggles for USB controllers, network cards, and onboard audio.
+I rebooted and entered the BIOS/UEFI (pressed "Esc" key for mine). Inside the Integrated Peripherals section, I found toggles for USB controllers, network cards, and onboard audio.
 
 What I learned: It’s important to know how to access and control these settings outside the OS. Useful for troubleshooting when a device isn’t even being detected.
+
+Also here is what the GRUB (Bootloader) looks like:
 
 📸 Screenshot BIOS screen showing peripheral options.
 
