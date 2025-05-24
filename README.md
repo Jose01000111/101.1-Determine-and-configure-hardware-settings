@@ -5,208 +5,81 @@
 ---
 [LPIC-1 Exam 101.1 Lab](https://1drv.ms/w/c/354f1c8d534fbced/EZOo5qb56thNhBnLrsEatygBT3OPsqAiqxEYwSc89oVSxQ?e=kbBURl)
 ---
-## 🔸 Part 1: Enable and Disable Integrated Peripherals
+I created these LPIC-1 labs on my own Linux machine to get hands-on practice with hardware-related topics covered in the certification. Below, you’ll find a breakdown of what I did in each lab, what I learned, and why it matters. I’ve also marked spots with a 📸 emoji where I took screenshots to include in my GitHub repo.
 
-### 🎯 Goal:
-Understand where and how integrated hardware (USB, NICs, audio, etc.) can be enabled or disabled.
+For reference, I’ve included the following helpful links:
 
-### 🔧 Step 1.1: Access BIOS/UEFI Settings
+Official LPI Exam Objectives: https://www.lpi.org/our-certifications/lpic-1-overview
 
-1. Reboot your physical or virtual machine.
-2. As it starts, press the BIOS/UEFI entry key (commonly `Del`, `F2`, `F10`, or `Esc`).
-3. Navigate to **Integrated Peripherals**, **Advanced**, or similar section.
-4. Locate and experiment with:
-   - USB controllers
-   - Network adapters (Ethernet/Wi-Fi)
-   - Onboard audio
+My Lab Notes: [link goes here]
 
-> 📝 **Note:** These changes are outside Linux. This step is about knowing how to access and toggle them.
+Full Lab Instructions: [link goes here]
 
----
+Let’s get into it!
 
-## 🔸 Part 2: Identify Types of Mass Storage Devices
+🔸 Part 1: Enable/Disable Integrated Peripherals
 
-### 🎯 Goal:
-Differentiate between HDDs, SSDs, USB drives, loop devices, and optical drives.
+I rebooted and entered the BIOS/UEFI (pressed "Del" for mine). Inside the Integrated Peripherals section, I found toggles for USB controllers, network cards, and onboard audio.
 
-### 🔍 Step 2.1: List Block Devices
+What I learned: It’s important to know how to access and control these settings outside the OS. Useful for troubleshooting when a device isn’t even being detected.
 
-```bash
-lsblk -o NAME,MAJ:MIN,RM,SIZE,RO,TYPE,MOUNTPOINT
-```
+📸 Screenshot BIOS screen showing peripheral options.
 
-- `RM`: Removable device (e.g., USB)
-- `TYPE`: `disk`, `part`, `rom`, or `loop`
+🔸 Part 2: Identify Mass Storage Devices
 
-### 🔍 Step 2.2: Show Partition Tables
+I ran the lsblk and fdisk -l commands to check out my drives. Then I plugged in a USB stick and saw it show up as /dev/sdb.
 
-```bash
-sudo fdisk -l
-```
+What I learned: Good practice to spot the difference between SSDs, HDDs, loop devices, and USBs using command-line tools.
 
-- SATA drives: `/dev/sda`
-- NVMe SSDs: `/dev/nvme0n1`
-- USB drives: `/dev/sdb`, `/dev/sdc`
+📸 Screenshot before and after inserting the USB.
 
-👉 Insert a USB drive and rerun to observe changes.
+🔸 Part 3: Check Hardware Resources
 
----
+I checked system resource usage with:
 
-## 🔸 Part 3: Check Hardware Resources (IRQs, DMA, I/O Ports)
+cat /proc/interrupts for IRQs
 
-### 🎯 Goal:
-Understand how system resources are assigned to devices.
-
-### 📘 Step 3.1: List Interrupts (IRQs)
-
-```bash
-cat /proc/interrupts
-```
-
-Example:
-```
-19:  12345678  IO-APIC   eth0
-```
-
-### 📘 Step 3.2: View I/O Ports
-
-```bash
 cat /proc/ioports
-```
 
-### 📘 Step 3.3: View DMA Channels
-
-```bash
 cat /proc/dma
-```
 
----
+What I learned: These files show how devices are connected and using resources. This can help figure out conflicts or issues with certain hardware.
 
-## 🔸 Part 4: Use Tools to List Hardware Info
+📸 Screenshot of cat /proc/interrupts.
 
-### 🎯 Goal:
-Use CLI tools to audit hardware devices in Linux.
+🔸 Part 4: List Hardware Info
 
-### 🛠️ Step 4.1: PCI Devices
+I ran the following:
 
-```bash
-lspci
-lspci -v   # Verbose output
-```
+lspci and lsusb to list PCI and USB devices
 
-### 🛠️ Step 4.2: USB Devices
+lshw -short for a quick system summary
 
-```bash
-lsusb
-lsusb -v | less   # Verbose mode
-```
+lscpu and free -h for CPU and memory
 
-### 🛠️ Step 4.3: Full Hardware Inventory
+dmidecode for BIOS and system details
 
-```bash
-sudo lshw -short
-```
+What I learned: These are quick and powerful tools for checking what hardware you have and how it’s performing—all from the terminal.
 
-### 🛠️ Step 4.4: CPU and Memory Info
+📸 Screenshot of lshw -short or lspci.
 
-```bash
-lscpu
-free -h
-```
+🔸 Part 5: Manage USB Devices
 
-### 🛠️ Step 4.5: DMI/BIOS Info
+Plugged in a USB stick, mounted it to /mnt/usb, and then unmounted it. I used both traditional and udisksctl commands.
 
-```bash
-sudo dmidecode | less
-```
+What I learned: Mounting and unmounting correctly is key to keeping USB data safe. Also nice to know how to power down a USB port.
 
-Use `/` to search for terms like `BIOS`, `System`, `Memory`.
+📸 Screenshot showing mounted USB in lsblk.
 
----
+🔸 Part 6: Explore sysfs, udev, and dbus
 
-## 🔸 Part 5: Manage USB Devices
+I checked network interface details in /sys/class/net
 
-### 🎯 Goal:
-Mount/unmount and power off USB devices.
+Ran udevadm info and udevadm monitor to see device events
 
-### 💾 Step 5.1: Identify USB Drive
+Used dbus-monitor to watch system messages
 
-Plug in USB, then:
+What I learned: These tools show how Linux tracks devices behind the scenes. You can actually see the kernel reacting when you plug or unplug something.
 
-```bash
-lsblk
-```
+📸 Screenshot of udevadm monitor while plugging in a USB.
 
-Look for `/dev/sdb1` or similar.
-
-### 💾 Step 5.2: Mount USB Drive
-
-```bash
-sudo mkdir /mnt/usb
-sudo mount /dev/sdb1 /mnt/usb
-```
-
-### 💾 Step 5.3: Unmount USB Drive
-
-```bash
-sudo umount /mnt/usb
-```
-
-Or using `udisksctl`:
-
-```bash
-udisksctl unmount -b /dev/sdb1
-udisksctl power-off -b /dev/sdb
-```
-
----
-
-## 🔸 Part 6: Explore sysfs, udev, and dbus
-
-### 🎯 Goal:
-Understand the Linux device management system.
-
-### 🧠 Step 6.1: Explore sysfs `/sys`
-
-```bash
-cd /sys/class/net
-ls
-cat eth0/address   # Replace `eth0` with your interface
-```
-
-### 🧠 Step 6.2: Use udevadm
-
-```bash
-udevadm info --query=all --name=/dev/sdb1
-```
-
-Monitor real-time udev activity:
-
-```bash
-udevadm monitor
-```
-
-Unplug/replug USB to see output.
-
-### 🧠 Step 6.3: Monitor D-Bus Events
-
-```bash
-dbus-monitor
-```
-
-Useful in GUI environments to see device messages.
-
----
-
-## ✅ Lab Complete
-
-You’ve now practiced:
-
-- Accessing BIOS settings
-- Identifying mass storage devices
-- Viewing IRQs, I/O ports, DMA
-- Listing PCI, USB, and full hardware
-- Managing USB devices
-- Using sysfs, udev, and dbus
-
-🎓 **Tip:** These skills are essential for LPIC-1 and real-world Linux troubleshooting.
