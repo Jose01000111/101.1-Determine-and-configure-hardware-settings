@@ -1,8 +1,6 @@
 # 🧪 LPIC-1 Lab:
 [Topic 101.1 Determine and Configure Hardware Settings](https://www.lpi.org/our-certifications/exam-101-102-objectives/#101.1_Determine_and_configure_hardware_settings)
 
-[Topic 101.1 Notes](https://d.docs.live.net/354F1C8D534FBCED/Documents/LPIC-1%20Topic%20101.1%20Determine%20and%20Configure%20Hardware%20Settings.docx)
-
 **Objective:** Learn to identify, inspect, and manage hardware components in Linux.
 
 ---
