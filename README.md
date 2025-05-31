@@ -1,4 +1,4 @@
-# 🧪 LPIC-1 Lab: Topic 101.1 Determine and Configure Hardware Settings & 102 Boot the system
+# 🧪 LPIC-1 Lab: Topic 101.1 Determine and Configure Hardware Settings & 101.2 Boot the system
 
 I created these LPIC-1 labs on my own Linux machine to get hands-on practice with hardware-related topics covered in the certification. Below, you’ll find a breakdown of what I did in each lab, what I learned, and why it matters. 
 
