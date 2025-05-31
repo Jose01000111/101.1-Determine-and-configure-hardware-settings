@@ -8,11 +8,11 @@ I’ve included some helpful links to guide you through the lab and for studying
 
 ---
 
-[Topic 101.1 Notes](https://1drv.ms/w/c/354f1c8d534fbced/Ef7G_xVPG0ZJu6wZ0DdeGSUBmSy6RBxTid3fkbKFnt8J-w?e=Mm5yvf)
+[Topic 101.1 & 101.2 Notes](https://1drv.ms/w/c/354f1c8d534fbced/Ef7G_xVPG0ZJu6wZ0DdeGSUBmSy6RBxTid3fkbKFnt8J-w?e=Mm5yvf)
 
 ---
 
-[LPIC-1 Exam 101.1 Lab](https://1drv.ms/w/c/354f1c8d534fbced/EZOo5qb56thNhBnLrsEatygBT3OPsqAiqxEYwSc89oVSxQ?e=kbBURl)
+[LPIC-1 Exam 101.1 & 101.2 Lab](https://1drv.ms/w/c/354f1c8d534fbced/EZOo5qb56thNhBnLrsEatygBT3OPsqAiqxEYwSc89oVSxQ?e=kbBURl)
 
 ---
 ### 🔸 Part 1: Enable/Disable Integrated Peripherals
