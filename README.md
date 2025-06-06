@@ -10,7 +10,7 @@ I’ve included some helpful links to guide you through the lab and for studying
 
 [Objective: 101.1 Notes](https://1drv.ms/w/c/354f1c8d534fbced/EeeZYz_V51dOmsaDqkqMUMcBeatbL4mIVxMTf41w7QEYmg?e=b5yvfr)
 
-[Objective: 101.2 Notes]()
+[Objective: 101.2 Notes](https://1drv.ms/w/c/354f1c8d534fbced/EUwj-AK242REiWJKTZaL2yQBxMgSWvcZki4K2ZVOOcb0XA?e=DGd0Jm)
 
 ---
 
