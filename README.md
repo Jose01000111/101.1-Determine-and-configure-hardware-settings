@@ -4,11 +4,13 @@ I created these LPIC-1 labs on my own Linux machine to get hands-on practice wit
 
 I’ve included some helpful links to guide you through the lab and for studying afterward:
 
-[Topic 101.1 Determine and Configure Hardware Settings & 101.2 Boot the system LPI Exam topics](https://www.lpi.org/our-certifications/exam-101-102-objectives/#101.1_Determine_and_configure_hardware_settings)
+[Objective: 101.1 Determine and Configure Hardware Settings & 101.2 Boot the system LPI Exam topics](https://www.lpi.org/our-certifications/exam-101-102-objectives/#101.1_Determine_and_configure_hardware_settings)
 
 ---
 
-[Topic 101.1 & 101.2 Notes](https://1drv.ms/w/c/354f1c8d534fbced/Ef7G_xVPG0ZJu6wZ0DdeGSUBmSy6RBxTid3fkbKFnt8J-w?e=Mm5yvf)
+[Objective: 101.1 Notes](https://1drv.ms/w/c/354f1c8d534fbced/EeeZYz_V51dOmsaDqkqMUMcBeatbL4mIVxMTf41w7QEYmg?e=b5yvfr)
+
+[Objective: 101.2 Notes]()
 
 ---
 
